@@ -12,11 +12,35 @@ body{margin:0;background:#000021;color:white;font-family:'Poppins',sans-serif}
 
 /* NAV */
 nav{display:flex;justify-content:space-between;align-items:center;padding:0 50px;height:80px;background:#12123e}
-
 nav ul{display:flex;list-style:none}
 nav ul li{margin:0 20px}
 nav a{color:white;text-decoration:none}
 nav a:hover{color:#00bcd4}
+
+/* QUICK CONTACT BAR */
+.quick-contact{
+  background:#0c0c38;
+  padding:14px 40px;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+
+.quick-contact a{
+  color:white;
+  text-decoration:none;
+  background:#00bcd4;
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:14px;
+  transition:.2s;
+}
+
+.quick-contact a:hover{
+  background:#0097a7;
+}
 
 /* HAMBURGER */
 .hamburger{width:28px;height:22px;display:none;flex-direction:column;justify-content:space-between;cursor:pointer}
@@ -71,11 +95,24 @@ footer{background:#12123e;text-align:center;padding:15px;color:#aaa;margin-top:4
   </nav>
 </header>
 
+<!-- ✅ QUICK CONTACT SHORTCUT BAR -->
+<div class="quick-contact">
+
+  <a href="mailto:zubakhtpm@gmail.com">
+    📧 Contact via Gmail
+  </a>
+
+  <a href="https://www.linkedin.com/in/zubair-akhtar/" target="_blank">
+    🔗 Connect on LinkedIn
+  </a>
+
+</div>
+
 <div class="container">
   <h1>Contact Me</h1>
   <p class="subtitle">Feel free to reach out — I’ll get back to you shortly.</p>
 
-  <form action="mailto:" method="post" enctype="text/plain">
+  <form action="mailto:zubakhtpm@gmail.com" method="post" enctype="text/plain">
     <div class="row">
       <div><label>Your Name</label><input type="text" required></div>
       <div><label>Your Email</label><input type="email" required></div>
