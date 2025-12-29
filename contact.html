@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Zubair Akhtar</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      margin: 0;
+      background: rgb(0, 0, 33);
+      color: white;
+      font-family: "Poppins", sans-serif;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 50px;
+      height: 80px;
+      background: rgb(18, 18, 62);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: #00bcd4;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 70px auto;
+      padding: 0 25px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00bcd4;
+      margin-bottom: 10px;
+    }
+
+    p.subtitle {
+      text-align: center;
+      color: #ccc;
+      margin-bottom: 35px;
+    }
+
+    form {
+      background: rgb(18, 18, 62);
+      padding: 28px;
+      border-radius: 12px;
+      box-shadow: 0 0 18px rgba(0, 255, 255, 0.15);
+    }
+
+    /* two-column grid */
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    /* stack on mobile */
+    @media (max-width: 700px) {
+      .row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      background: rgb(5, 5, 50);
+      color: white;
+      margin-top: 12px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: none;
+    }
+
+    button {
+      margin-top: 18px;
+      background: #00bcd4;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0097a7;
+    }
+
+    .alt {
+      margin-top: 18px;
+      text-align: center;
+      color: #ccc;
+    }
+
+    .alt a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    footer {
+      background: rgb(18, 18, 62);
+      text-align: center;
+      padding: 15px;
+      color: #aaa;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="left">Zubair's Portfolio</div>
+      <ul>
+        <li><a href="index.html#about">About Me</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Contact Me</h1>
+    <p class="subtitle">
+      Feel free to reach out — I’ll get back to you shortly.
+    </p>
+
+    <!-- Works without backend (opens email client) -->
+    <form
+      action="mailto:"
+      method="post"
+      enctype="text/plain"
+    >
+      <div class="row">
+        <div>
+          <label>Your Name</label>
+          <input type="text" name="Name" required />
+        </div>
+
+        <div>
+          <label>Your Email</label>
+          <input type="email" name="Email" required />
+        </div>
+      </div>
+
+      <label>Subject</label>
+      <input type="text" name="Subject" />
+
+      <label>Your Message</label>
+      <textarea name="Message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <div class="alt">
+      Or contact directly<br /><br />
+      <a href="tel:+353 899596754">📞 Phone</a> &nbsp; | &nbsp;
+      <a href="mailto:zubair.com">✉️ Email</a>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Zubair Akhtar | All Rights Reserved
+  </footer>
+</body>
+</html>
