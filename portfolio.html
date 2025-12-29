@@ -4,28 +4,63 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Portfolio – Zubair Akhtar</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
 <style>
-body{margin:0;background:#000021;color:white;font-family:'Poppins',sans-serif}
+body{
+  margin:0;
+  background:#000021;
+  color:white;
+  font-family:'Poppins',sans-serif;
+}
 
-/* NAV */
-nav{display:flex;justify-content:space-between;align-items:center;padding:0 50px;height:80px;background:#12123e}
+/* NAVBAR */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 50px;
+  height:80px;
+  background:#12123e;
+}
 nav ul{display:flex;list-style:none}
 nav ul li{margin:0 20px}
 nav a{text-decoration:none;color:white}
 nav a:hover{color:#00bcd4}
 
 /* HAMBURGER */
-.hamburger{width:28px;height:22px;display:none;flex-direction:column;justify-content:space-between;cursor:pointer}
-.hamburger span{height:3px;background:white;border-radius:3px;transition:.3s}
+.hamburger{
+  width:28px;
+  height:22px;
+  display:none;
+  flex-direction:column;
+  justify-content:space-between;
+  cursor:pointer;
+}
+.hamburger span{
+  height:3px;
+  background:white;
+  border-radius:3px;
+  transition:.3s;
+}
 
 /* MOBILE MENU */
 @media(max-width:900px){
   nav ul{
-    position:fixed;top:0;right:-100%;height:100vh;width:70%;
-    background:#12123e;flex-direction:column;align-items:center;
-    justify-content:center;gap:25px;transition:.35s
+    position:fixed;
+    top:0;
+    right:-100%;
+    height:100vh;
+    width:75%;
+    max-width:420px;
+    background:#12123e;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:25px;
+    transition:.35s;
+    box-shadow:-6px 0 25px rgba(0,0,0,.5);
   }
   nav ul.active{right:0}
   .hamburger{display:flex}
@@ -34,14 +69,112 @@ nav a:hover{color:#00bcd4}
   .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 }
 
-.wrapper{padding:60px 30px}
-h1{text-align:center;color:#00bcd4}
-.pdf-actions{display:flex;justify-content:center;gap:20px;margin-bottom:25px}
-.btn{background:#00bcd4;padding:10px 20px;border-radius:6px;color:white;text-decoration:none}
-.btn:hover{background:#0097a7}
-.viewer{display:flex;justify-content:center}
-iframe{width:90%;height:85vh;border-radius:12px;border:none}
-footer{background:#12123e;text-align:center;padding:15px;color:#aaa}
+/* MAIN WRAPPER */
+.wrapper{
+  padding:60px 24px;
+  max-width:1100px;
+  margin:auto;
+}
+
+h1{
+  text-align:center;
+  color:#00bcd4;
+  margin-bottom:30px;
+}
+
+/* ---- CARD GRID ---- */
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+/* Tablets */
+@media(max-width:992px){
+  .portfolio-grid{grid-template-columns:repeat(2,1fr);}
+}
+
+/* Mobile portrait */
+@media(max-width:640px){
+  .portfolio-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+}
+
+/* ---- CARD ---- */
+.card{
+  background:#12123e;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:0 0 16px rgba(0,255,255,.12);
+  transition:.25s;
+}
+.card:hover{transform:translateY(-3px)}
+
+/* IMAGE — responsive & consistent */
+.card img{
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+/* BODY */
+.card-body{
+  padding:16px 18px 20px;
+}
+
+.card-title{
+  font-size:17px;
+  font-weight:600;
+  margin-bottom:4px;
+}
+
+.card-line{
+  font-size:13px;
+  color:#bbbbbb;
+}
+
+/* READ MORE CONTENT */
+.readmore{
+  margin-top:10px;
+  display:none;
+  font-size:13.5px;
+  color:#d5d5d5;
+  line-height:1.6;
+}
+
+/* BUTTON */
+.btn{
+  display:block;          /* makes it take full row */
+  margin:14px auto 0;     /* centers horizontally */
+  padding:9px 16px;
+  border-radius:8px;
+  background:#00bcd4;
+  color:white;
+  text-decoration:none;
+  cursor:pointer;
+  font-size:13.5px;
+  border:none;
+  text-align:center;      /* centers text */
+}
+.btn:hover{
+  background:#0097a7;
+}
+
+
+/* Larger tap target on phones */
+@media(max-width:640px){
+  .btn{padding:11px 16px;font-size:14.5px}
+}
+footer{
+  background:#12123e;
+  text-align:center;
+  padding:15px;
+  color:#aaa;
+  margin-top:40px;
+}
 </style>
 </head>
 
@@ -63,22 +196,174 @@ footer{background:#12123e;text-align:center;padding:15px;color:#aaa}
   </nav>
 </header>
 
+
 <div class="wrapper">
-  <h1>My Portfolio (PDF)</h1>
 
-  <div class="pdf-actions">
-    <a class="btn" href="Portfolio.pdf" target="_blank">Open in New Tab</a>
-    <a class="btn" href="Portfolio.pdf" download>Download PDF</a>
-  </div>
+  <h1>My Projects</h1>
 
-  <div class="viewer">
-    <iframe src="Portfolio.pdf"></iframe>
+  <div class="portfolio-grid">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <img src="underwrite_ai_logo.jpg" alt="Project 1">
+
+      <div class="card-body">
+        <div class="card-title">UnderwriteAI – Intelligent Credit Decision Support Platform</div>
+        <div class="card-line">Smart underwriting assistant improving loan approvals & risk assessment.</div>
+        <div class="readmore">
+          UnderwriteAI is a credit decision support platform designed to help financial institutions evaluate borrower eligibility using rule-based scoring, behavioral indicators, and bureau data insights. The product improves underwriting accuracy, reduces manual review effort, and enhances turnaround time for loan approvals.
+        </div>
+
+        <button class="btn read-btn">Read More</button>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <img src="cyberguardadvisory_logo.jpg" alt="Project 1">
+
+      <div class="card-body">
+        <div class="card-title">CyberGuard - GenAI Cybersecurity Companion for Digital Banks</div>
+        <div class="card-line">AI-powered cybersecurity & fraud monitoring system for Irish digital banks.</div>
+        <div class="readmore">
+          CyberGuard integrates GenAI, NLP alerts, and compliance automation to detect suspicious transactions, insider risk, phishing patterns, and policy breaches in real-time. The product assists security teams with automated risk flagging, incident summaries, and regulatory documentation readiness.
+        </div>
+
+        <button class="btn read-btn">Read More</button>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <img src="ecovault.png" alt="Project 1">
+
+      <div class="card-body">
+        <div class="card-title">EcoVault — Green Digital Banking Product (EU Market)</div>
+        <div class="card-line">Eco-focused savings experience encouraging environmentally responsible spending.</div>
+        <div class="readmore">
+          EcoVault rewards users for sustainable purchases, carbon-neutral transactions, and eco-linked savings behavior. The product concept focuses on behavioral finance, gamified sustainability scores, green partners integration, and EU regulatory alignment for ethical finance ecosystems.
+        </div>
+
+        <button class="btn read-btn">Read More</button>
+      </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="card">
+      <img src="stocksip.jpg" alt="Project 1">
+
+      <div class="card-body">
+        <div class="card-title">Stock SIP - Auto-Investment Feature for Bunq</div>
+        <div class="card-line">Recurring fractional stock investment feature for long-term wealth building.</div>
+        <div class="readmore">
+          Stock SIP enables users to automate periodic stock investments through scheduled deposits. The feature supports recurring intervals, portfolio allocation presets, cost averaging strategy, investment reminders, and improves user retention through financial habit-building behavior loops.
+        </div>
+
+        <button class="btn read-btn">Read More</button>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="card">
+      <img src="passportcredit.png" alt="Project 1">
+
+      <div class="card-body">
+        <div class="card-title">Passport Credit</div>
+        <div class="card-line">Borderless micro-credit product supporting migrant & expat workers.</div>
+        <div class="readmore">
+          Passport Credit allows users to build a transferable financial identity that travels across countries. The solution includes identity portability, thin-file underwriting, alternative credit signals, remittance-linked repayment journeys, and migrant-friendly onboarding flows.
+        </div>
+
+        <button class="btn read-btn">Read More</button>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="card">
+      <img src="GD.jpg" alt="Project 1">
+
+      <div class="card-body">
+        <div class="card-title">GroceryDash</div>
+        <div class="card-line">Hyperlocal grocery delivery concept focused on affordability & reliability.</div>
+        <div class="readmore">
+          GroceryDash optimizes rapid-fulfillment logistics using micro-warehousing, delivery routing intelligence, SKU demand clustering, and price-sensitive user segmentation. The product emphasizes supply-chain efficiency, repeat-order retention, and improved shopper convenience experience.
+        </div>
+
+        <button class="btn read-btn">Read More</button>
+      </div>
+    </div>
+
+    <!-- CARD 7 -->
+    <div class="card">
+      <img src="notion_logo.jpg" alt="Project 1">
+
+      <div class="card-body">
+        <div class="card-title">Notion - Product Growth Strategy</div>
+        <div class="card-line">Designed PLG growth loops, retention levers & creator ecosystem strategy.</div>
+        <div class="readmore">
+          This case study explores activation funnels, user personas, community-led distribution, collaboration network effects, and monetization pathways for Notion. Recommendations include referral incentives, creator templates marketplace, onboarding guidance, and habit-forming workflows
+        </div>
+
+        <button class="btn read-btn">Read More</button>
+      </div>
+    </div>
+
+    <!-- CARD 8 -->
+    <div class="card">
+      <img src="loanapp.jpeg" alt="Project 1">
+
+      <div class="card-body">
+        <div class="card-title">Full-Stack Lending App - User Journey Flow</div>
+        <div class="card-line">End-to-end operational & customer journey mapping for lending lifecycle.</div>
+        <div class="readmore">
+          Flow design includes onboarding, document collection, underwriting review, disbursal routing, repayment journeys, delinquency handling, escalation workflow, and inactive user recovery - represented through system interaction diagrams and process maps
+        </div>
+
+        <button class="btn read-btn">Read More</button>
+      </div>
+    </div>
+
+    <!-- CARD 9 -->
+    <div class="card">
+      <img src="kyc.jpg" alt="Project 1">
+
+      <div class="card-body">
+        <div class="card-title">KYC Onboarding Process - Loan App</div>
+        <div class="card-line">Friction-reduced KYC onboarding to improve completion & verification success.</div>
+        <div class="readmore">
+          Case study includes Aadhaar/PAN flows, new vs existing user journeys, KYC retry handling, consent & fraud checks, document UX refinement, and benchmark-based onboarding improvements across verification modes.
+        </div>
+
+        <button class="btn read-btn">Read More</button>
+      </div>
+    </div>
+
+    <!-- CARD 10 -->
+    <div class="card">
+      <img src="mandate.jpg" alt="Project 1">
+
+      <div class="card-body">
+        <div class="card-title">Mandate Registration (e-NACH / Aadhaar / Physical)</div>
+        <div class="card-line">Optimized EMI auto-debit registration journeys & success conversion metrics</div>
+        <div class="readmore">
+          Mandate Registration compares e-NACH, Aadhaar, and physical mandates, mapping failure scenarios, TAT metrics, user exception handling, and contextual in-app guidance to improve mandate success and reduce repayment disruptions.
+        </div>
+
+        <button class="btn read-btn">Read More</button>
+      </div>
+    </div>
+
   </div>
 </div>
 
-<footer>© 2025 Zubair Akhtar | All Rights Reserved</footer>
+
+<footer>
+  © 2025 Zubair Akhtar | All Rights Reserved
+</footer>
+
 
 <script>
+/* mobile nav */
 const hamburger=document.getElementById("hamburger");
 const navMenu=document.getElementById("navMenu");
 
@@ -93,6 +378,17 @@ document.querySelectorAll("#navMenu a").forEach(a =>
     navMenu.classList.remove("active");
   })
 );
+
+/* read more toggle */
+document.querySelectorAll(".read-btn").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const text = btn.previousElementSibling;
+    const expanded = text.style.display === "block";
+
+    text.style.display = expanded ? "none" : "block";
+    btn.innerText = expanded ? "Read More" : "Read Less";
+  });
+});
 </script>
 
 </body>
