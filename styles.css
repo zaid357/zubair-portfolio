@@ -3,13 +3,12 @@
 ===================== */
 
 :root {
-  --ink: #0f172a;
-  --muted: #64748b;
-  --bg: #ffffff;
-  --soft: #f5f7f8;
-  --border: #e5e7eb;
-  --link: #2563eb;
-  --dark: #0f172a;
+  --ink: #e5e7eb;        /* main text */
+  --muted: #9ca3af;     /* secondary text */
+  --bg: #0b0f14;        /* page background */
+  --soft: #111827;      /* section/footer bg */
+  --border: #1f2933;
+  --link: #60a5fa;
 }
 
 /* =====================
@@ -143,7 +142,7 @@ p {
   margin-top: 28px;
   padding: 14px 26px;
   background: var(--ink);
-  color: #fff;
+  color: #101010;
   font-size: 12px;
   letter-spacing: 0.15em;
   text-decoration: none;
@@ -281,3 +280,33 @@ footer {
     margin-bottom: 48px;
   }
 }
+
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+section {
+  background: transparent;
+}
+
+.hero {
+  background: transparent;
+}
+
+.project-card {
+  background: #0f172a;
+  border: 1px solid var(--border);
+}
+
+footer {
+  background: var(--soft);
+}
+
+
