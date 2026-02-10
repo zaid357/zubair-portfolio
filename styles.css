@@ -310,3 +310,21 @@ footer {
 }
 
 
+.contact-footer {
+  text-align: center;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  margin-top: 80px;
+}
+
+.contact-footer a {
+  margin: 0 14px;
+  color: var(--text);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.contact-footer a:hover {
+  color: var(--accent);
+}
+
